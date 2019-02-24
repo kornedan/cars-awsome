@@ -5,9 +5,11 @@ import lombok.*;
 import javax.persistence.*;
 
 
+
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
+//@NoArgsConstructor
+@Builder
 @Entity
 @Table(name = "cars")
 public class Car {
@@ -28,4 +30,15 @@ public class Car {
     @Column(name = "plate", unique = true, nullable = false)
     private String plate;
 
+
+    public Car(){
+        System.out.println("This is new car");
+    }
+
+    public Car(String brand, String model, String power, String plate) {
+        this.brand = brand;
+        this.model = model;
+        this.power = power;
+        this.plate = plate;
+    }
 }

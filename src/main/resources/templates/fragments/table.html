@@ -1,4 +1,4 @@
-<div class="col-sm-12">
+<div class="col-sm-12" xmlns:th="http://www.w3.org/1999/xhtml">
     <table class="table table-dark" th:fragment="table">
         <tr>
             <th>id</th>
@@ -11,8 +11,18 @@
             <td th:text="${car.getBrand()}"></td>
             <td th:text="${car.getModel()}"></td>
             <td th:text="${car.getPower()}"></td>
-            <td><button class="btn btn-sm btn-success">update</button> </td>
-            <td><button class="btn btn-sm btn-warning">delete</button> </td>
+            <td th:text="${car.getPlate()}"></td>
+            <td>
+                  <a href="/redirect/update">  <button class="btn btn-sm btn-success">update</button>
+                  </a>
+            </td>
+
+            <td>
+                <form action="/del">
+                    <input type="hidden" th:value="${car.getPlate()}" name="plate">
+                    <button class="btn btn-sm btn-warning" type="submit">delete</button>
+                </form>
+            </td>
         </tr>
     </table>
 </div>

@@ -13,9 +13,11 @@
         </div>
     </div>
 
+    <div class="row" th:replace="fragments/add :: add"></div>
+    <div class="row" th:replace="fragments/table :: table"></div>
+    <div class="row">
 
-    <div class="row" th:replace="fragments/table :: table">
-
+        <a href="http://localhost:8081/swagger-ui.html">Swagger docs</a>
     </div>
 </div>
 </body>
